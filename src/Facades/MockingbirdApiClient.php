@@ -1,16 +1,16 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Facades;
+namespace Wernersoderstrom\MockingbirdApiClient\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Lasselehtinen\MockingbirdApiClient\MockingbirdApiClient
+ * @see \Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient
  */
 class MockingbirdApiClient extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Lasselehtinen\MockingbirdApiClient\MockingbirdApiClient::class;
+        return \Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient::class;
     }
 }

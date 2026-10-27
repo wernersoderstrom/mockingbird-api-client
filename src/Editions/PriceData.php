@@ -1,6 +1,6 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Editions;
+namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Data;

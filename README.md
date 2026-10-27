@@ -1,6 +1,6 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/lasselehtinen/mockingbird-api-client.svg?style=flat-square)](https://packagist.org/packages/lasselehtinen/mockingbird-api-client)
-[![run-tests](https://github.com/lasselehtinen/mockingbird-api-client/actions/workflows/run-tests.yml/badge.svg)](https://github.com/lasselehtinen/mockingbird-api-client/actions/workflows/run-tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/lasselehtinen/mockingbird-api-client.svg?style=flat-square)](https://packagist.org/packages/lasselehtinen/mockingbird-api-client)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/wernersoderstrom/mockingbird-api-client.svg?style=flat-square)](https://packagist.org/packages/wernersoderstrom/mockingbird-api-client)
+[![run-tests](https://github.com/wernersoderstrom/mockingbird-api-client/actions/workflows/run-tests.yml/badge.svg)](https://github.com/wernersoderstrom/mockingbird-api-client/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/wernersoderstrom/mockingbird-api-client.svg?style=flat-square)](https://packagist.org/packages/wernersoderstrom/mockingbird-api-client)
 
 # Mockingbird External API Client
 
@@ -13,7 +13,7 @@ A Laravel API client for Mockingbird that provides OAuth authentication, strongl
 You can install the package via composer:
 
 ```bash
-composer require lasselehtinen/mockingbird-api-client
+composer require wernersoderstrom/mockingbird-api-client
 ```
 
 You can publish the config file with:
@@ -43,7 +43,7 @@ The package exposes dedicated services for each API area.
 ## Edition
 
 ```php
-use Lasselehtinen\MockingbirdApiClient\Editions\EditionService;
+use Wernersoderstrom\MockingbirdApiClient\Editions\EditionService;
 
 $edition = app(EditionService::class);
 $edition = $edition->get('1ca73850-96c2-4ac3-8b98-44d35c9378d1');
@@ -52,7 +52,7 @@ $edition = $edition->get('1ca73850-96c2-4ac3-8b98-44d35c9378d1');
 Or through dependency injection:
 
 ```php
-use Lasselehtinen\MockingbirdApiClient\Editions\EditionService;
+use Wernersoderstrom\MockingbirdApiClient\Editions\EditionService;
 
 final class EditionController
 {

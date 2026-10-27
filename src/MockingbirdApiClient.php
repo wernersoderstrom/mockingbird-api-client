@@ -1,6 +1,6 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient;
+namespace Wernersoderstrom\MockingbirdApiClient;
 
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Cache;

@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Collection;
-use Lasselehtinen\MockingbirdApiClient\Editions\AwardData;
-use Lasselehtinen\MockingbirdApiClient\Editions\ContributorData;
-use Lasselehtinen\MockingbirdApiClient\Editions\ContributorRoleData;
-use Lasselehtinen\MockingbirdApiClient\Editions\EditionService;
-use Lasselehtinen\MockingbirdApiClient\Editions\LanguageData;
-use Lasselehtinen\MockingbirdApiClient\Editions\PriceData;
-use Lasselehtinen\MockingbirdApiClient\Editions\StockBalanceData;
-use Lasselehtinen\MockingbirdApiClient\Editions\TextData;
-use Lasselehtinen\MockingbirdApiClient\MockingbirdApiClient;
+use Wernersoderstrom\MockingbirdApiClient\Editions\AwardData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\ContributorData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\ContributorRoleData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\EditionService;
+use Wernersoderstrom\MockingbirdApiClient\Editions\LanguageData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\PriceData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\StockBalanceData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\TextData;
+use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 use Spatie\LaravelData\DataCollection;
 
 it('can authenticate and fetch token from the API', function () {

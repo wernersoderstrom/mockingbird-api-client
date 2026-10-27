@@ -1,12 +1,12 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Editions;
+namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Str;
-use Lasselehtinen\MockingbirdApiClient\Casts\NonEmptyTextsCast;
-use Lasselehtinen\MockingbirdApiClient\MockingbirdApiClient;
+use Wernersoderstrom\MockingbirdApiClient\Casts\NonEmptyTextsCast;
+use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 use League\ISO3166\ISO3166;
 use OutOfBoundsException;
 use Spatie\LaravelData\Attributes\Computed;

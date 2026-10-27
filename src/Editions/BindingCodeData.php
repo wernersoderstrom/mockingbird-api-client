@@ -1,8 +1,8 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Editions;
+namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
-use Lasselehtinen\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
+use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
 use Spatie\LaravelData\Data;
 
 class BindingCodeData extends Data

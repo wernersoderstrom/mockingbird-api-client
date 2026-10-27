@@ -1,10 +1,10 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Tests;
+namespace Wernersoderstrom\MockingbirdApiClient\Tests;
 
 use Dotenv\Dotenv;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Lasselehtinen\MockingbirdApiClient\MockingbirdApiClientServiceProvider;
+use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClientServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Lasselehtinen\\MockingbirdApiClient\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Wernersoderstrom\\MockingbirdApiClient\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Casts;
+namespace Wernersoderstrom\MockingbirdApiClient\Casts;
 
-use Lasselehtinen\MockingbirdApiClient\Editions\TextData;
+use Wernersoderstrom\MockingbirdApiClient\Editions\TextData;
 use Spatie\LaravelData\Casts\Cast;
 use Spatie\LaravelData\DataCollection;
 use Spatie\LaravelData\Support\Creation\CreationContext;

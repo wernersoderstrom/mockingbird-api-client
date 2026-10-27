@@ -1,8 +1,8 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient;
+namespace Wernersoderstrom\MockingbirdApiClient;
 
-use Lasselehtinen\MockingbirdApiClient\Editions\EditionService;
+use Wernersoderstrom\MockingbirdApiClient\Editions\EditionService;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

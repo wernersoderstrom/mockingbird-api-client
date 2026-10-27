@@ -1,6 +1,6 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Exceptions;
+namespace Wernersoderstrom\MockingbirdApiClient\Exceptions;
 
 use RuntimeException;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Lasselehtinen\MockingbirdApiClient\Editions;
+namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
-use Lasselehtinen\MockingbirdApiClient\MockingbirdApiClient;
+use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 
 class EditionService
 {

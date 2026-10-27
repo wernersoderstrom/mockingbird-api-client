@@ -1,12 +1,12 @@
 {
-    "name": "lasselehtinen/mockingbird-api-client",
+    "name": "wernersoderstrom/mockingbird-api-client",
     "description": "This is a cliexternal API",
     "keywords": [
-        "lasselehtinen",
+        "wernersoderstrom",
         "laravel",
         "mockingbird-api-client"
     ],
-    "homepage": "https://github.com/lasselehtinen/mockingbird-api-client",
+    "homepage": "https://github.com/wernersoderstrom/mockingbird-api-client",
     "license": "MIT",
     "authors": [
         {
@@ -36,13 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Lasselehtinen\\MockingbirdApiClient\\": "src/",
-            "Lasselehtinen\\MockingbirdApiClient\\Database\\Factories\\": "database/factories/"
+            "Wernersoderstrom\\MockingbirdApiClient\\": "src/",
+            "Wernersoderstrom\\MockingbirdApiClient\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lasselehtinen\\MockingbirdApiClient\\Tests\\": "tests/",
+            "Wernersoderstrom\\MockingbirdApiClient\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -64,10 +64,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lasselehtinen\\MockingbirdApiClient\\MockingbirdApiClientServiceProvider"
+                "Wernersoderstrom\\MockingbirdApiClient\\MockingbirdApiClientServiceProvider"
             ],
             "aliases": {
-                "MockingbirdApiClient": "Lasselehtinen\\MockingbirdApiClient\\Facades\\MockingbirdApiClient"
+                "MockingbirdApiClient": "Wernersoderstrom\\MockingbirdApiClient\\Facades\\MockingbirdApiClient"
             }
         }
     },
