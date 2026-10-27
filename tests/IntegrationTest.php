@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Collection;
+use Spatie\LaravelData\DataCollection;
 use Wernersoderstrom\MockingbirdApiClient\Editions\AwardData;
 use Wernersoderstrom\MockingbirdApiClient\Editions\ContributorData;
 use Wernersoderstrom\MockingbirdApiClient\Editions\ContributorRoleData;
@@ -10,7 +11,6 @@ use Wernersoderstrom\MockingbirdApiClient\Editions\PriceData;
 use Wernersoderstrom\MockingbirdApiClient\Editions\StockBalanceData;
 use Wernersoderstrom\MockingbirdApiClient\Editions\TextData;
 use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
-use Spatie\LaravelData\DataCollection;
 
 it('can authenticate and fetch token from the API', function () {
     $client = app(MockingbirdApiClient::class);

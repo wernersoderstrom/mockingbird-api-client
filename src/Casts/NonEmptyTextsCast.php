@@ -2,11 +2,11 @@
 
 namespace Wernersoderstrom\MockingbirdApiClient\Casts;
 
-use Wernersoderstrom\MockingbirdApiClient\Editions\TextData;
 use Spatie\LaravelData\Casts\Cast;
 use Spatie\LaravelData\DataCollection;
 use Spatie\LaravelData\Support\Creation\CreationContext;
 use Spatie\LaravelData\Support\DataProperty;
+use Wernersoderstrom\MockingbirdApiClient\Editions\TextData;
 
 final class NonEmptyTextsCast implements Cast
 {

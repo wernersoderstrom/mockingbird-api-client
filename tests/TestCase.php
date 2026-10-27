@@ -4,9 +4,9 @@ namespace Wernersoderstrom\MockingbirdApiClient\Tests;
 
 use Dotenv\Dotenv;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClientServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\LaravelData\LaravelDataServiceProvider;
+use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClientServiceProvider;
 
 class TestCase extends Orchestra
 {
