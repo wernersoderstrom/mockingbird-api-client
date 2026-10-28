@@ -7,6 +7,7 @@ use Spatie\LaravelData\Data;
 
 class ContributorData extends Data
 {
+    /** First and last name joined with a space */
     #[Computed]
     public string $fullName;
 

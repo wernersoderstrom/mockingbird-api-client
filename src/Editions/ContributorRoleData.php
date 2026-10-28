@@ -6,6 +6,10 @@ use Spatie\LaravelData\Data;
 
 class ContributorRoleData extends Data
 {
+    /**
+     * @param  int  $id  Sent as a numeric string by the API
+     * @param  string|null  $onixCodelistValue  ONIX contributor role code (List 17), mapped from `name`. `null` when there is no mapping
+     */
     public function __construct(
         public int $id,
         public string $name,

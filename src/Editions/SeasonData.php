@@ -7,9 +7,14 @@ use Spatie\LaravelData\Data;
 
 class SeasonData extends Data
 {
+    /** `2026/1` for spring, `2026/2` for autumn, `null` without a year */
     #[Computed]
     public ?string $name;
 
+    /**
+     * @param  int|null  $year  `null` when the period is `N/A`
+     * @param  string|null  $period  `Spring`, `Autumn` or a number. `null` when `N/A`
+     */
     public function __construct(
         public ?int $year = null,
         public ?string $period = null,

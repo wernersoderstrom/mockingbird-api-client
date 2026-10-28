@@ -17,28 +17,40 @@ use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
 
 class EditionData extends Data
 {
+    /** This edition is the work's main edition */
     #[Computed]
     public bool $isMainEdition;
 
+    /** This edition is the work's web edition */
     #[Computed]
     public bool $isWebEdition;
 
+    /** Has a contributor whose role contains "Translator" */
     #[Computed]
     public bool $isTranslated;
 
+    /** The brand, unless it is Johnny Kniga or the same as the publishing house */
     #[Computed]
     public ?string $imprint;
 
     /**
+     * @param  string  $id  Mockingbird product ID
+     * @param  int|null  $gtin  EAN-13 / ISBN-13
      * @param  DataCollection<int, ContributorData>  $contributors
      * @param  DataCollection<int, AwardData>  $awards
      * @param  array<int, string>  $keywords
      * @param  array<int, string>  $bookTypes
+     * @param  float|null  $depth  `null` when 0 in Mockingbird
+     * @param  float|null  $height  `null` when 0 in Mockingbird
+     * @param  float|null  $weight  `null` when 0 in Mockingbird
+     * @param  float|null  $width  `null` when 0 in Mockingbird
      * @param  DataCollection<int, LanguageData>  $languages
      * @param  DataCollection<int, LanguageData>  $originalLanguages
+     * @param  int|null  $pages  `null` when 0 in Mockingbird
      * @param  DataCollection<int, PriceData>  $prices
      * @param  float  $vatRate  VAT as a fraction, e.g. 0.135 for 13.5 %
-     * @param  DataCollection<int, TextData>  $texts
+     * @param  DataCollection<int, TextData>  $texts  Marketing texts as HTML, empty texts removed
+     * @param  string|null  $internalTitle  Title shortened so that it and the format suffix (e.g. `kirja`, `e-kirja`) fit in 50 characters
      */
     public function __construct(
         #[MapInputName('productId')]
@@ -50,7 +62,6 @@ class EditionData extends Data
         #[MapInputName('workIdLegacy')]
         public int $legacyWorkId,
 
-        #[MapInputName('Title')]
         public string $title,
 
         public ?string $subtitle,
@@ -212,6 +223,9 @@ class EditionData extends Data
         return trim(mb_substr($this->title, 0, 50 - $spaceForFormat)).' '.$format;
     }
 
+    /**
+     * The printer contributor, excluding "Yhteispainatus". `null` for digital products.
+     */
     public function printer(): ?ContributorData
     {
         if ($this->isDigital) {
@@ -225,6 +239,11 @@ class EditionData extends Data
             ->first();
     }
 
+    /**
+     * Retail price calculated from the reseller price including VAT.
+     *
+     * Pocket books, manga and digital products are rounded up to the next 10 cents, everything else to the next .90.
+     */
     public function calculatedPublisherRetailPrice(): ?PriceData
     {
         $resellerPrice = $this->prices
@@ -265,6 +284,9 @@ class EditionData extends Data
         );
     }
 
+    /**
+     * Multiplier from the reseller price including VAT to the retail price.
+     */
     public function retailPriceMultiplier(): float
     {
         // Manga and pocket books
@@ -291,11 +313,17 @@ class EditionData extends Data
         };
     }
 
+    /**
+     * Cost center of the work.
+     */
     public function mainEditionCostCenter(): ?CostCenterData
     {
         return $this->work->costCenter;
     }
 
+    /**
+     * GTIN of the work's main edition.
+     */
     public function mainEditionGtin(): ?int
     {
         return $this->work->mainEditionGtin;

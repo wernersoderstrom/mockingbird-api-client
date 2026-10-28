@@ -7,6 +7,11 @@ use Spatie\LaravelData\Data;
 
 class PriceData extends Data
 {
+    /**
+     * @param  string  $currency  From `price.currency`
+     * @param  float  $value  From `price.value`
+     * @param  string|null  $onixCodelistValue  ONIX price type code (List 58), mapped from `priceType`. `null` when there is no mapping
+     */
     public function __construct(
         public string $currency,
         public float $value,

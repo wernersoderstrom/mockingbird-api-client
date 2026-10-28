@@ -1,0 +1,40 @@
+name: Docs
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'bin/generate-docs.php'
+      - 'tests/Fixtures/**'
+      - 'README.md'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'bin/generate-docs.php'
+      - 'tests/Fixtures/**'
+      - 'README.md'
+      - '.github/workflows/docs.yml'
+
+jobs:
+  docs:
+    name: Check data object docs are up to date
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          coverage: none
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v4
+
+      - name: Generate docs
+        run: composer docs
+
+      - name: Fail if README.md is out of date
+        run: git diff --exit-code README.md || (echo "::error::README.md is out of date. Run 'composer docs' and commit the result." && exit 1)

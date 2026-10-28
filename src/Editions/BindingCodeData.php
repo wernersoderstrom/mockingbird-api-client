@@ -7,6 +7,9 @@ use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
 
 class BindingCodeData extends Data
 {
+    /**
+     * @param  string  $onixCodelistValue  ONIX product form code (List 150), mapped from `id`
+     */
     public function __construct(
         public string $id,
         public string $name,

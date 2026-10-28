@@ -1,390 +1,391 @@
 {
-  "articleText": "Tämä kenttä ei ole käytössä.",
-  "assets": [
-    {
-      "assetIdLegacy": 310723,
-      "assetType": {
-        "id": "9",
-        "name": "Cover front"
-      },
-      "created": "2021-02-04T19:08:55+00:00",
-      "modified": "2020-09-09T21:49:46+00:00",
-      "printAssetIdLegacy": 216034,
-      "printIdLegacy": 69985
-    }
-  ],
-  "authorGroups": [],
-  "awards": [
-    {
-      "id": "376",
-      "name": "Tieto-Finlandia-palkinto"
-    }
-  ],
-  "bindingCode": {
-    "erpId": "HARD",
-    "id": "BB",
-    "name": "Hardback"
-  },
-  "bookTypes": [],
-  "brand": {
-    "name": "WSOY"
-  },
-  "contributors": [
-    {
-      "contactId": "00000000-0000-0000-0000-000000000000",
-      "contactIdLegacy": 47961,
-      "firstName": "Anssi",
-      "lastName": "Mäkinen",
-      "role": {
-        "id": "326",
-        "name": "Project Manager"
-      }
+    "articleText": "Tämä kenttä ei ole käytössä.",
+    "assets": [
+        {
+            "printAssetIdLegacy": 216034,
+            "printIdLegacy": 69985,
+            "assetIdLegacy": 310723,
+            "assetType": {
+                "id": "9",
+                "name": "Cover front"
+            },
+            "created": "2021-02-04T19:08:55+00:00",
+            "modified": "2020-09-09T21:49:46+00:00"
+        }
+    ],
+    "authorGroups": [],
+    "awards": [
+        {
+            "id": "376",
+            "name": "Tieto-Finlandia-palkinto"
+        }
+    ],
+    "bindingCode": {
+        "id": "BB",
+        "name": "Hardback",
+        "erpId": "HARD"
     },
-    {
-      "contactId": "00000000-0000-0000-0000-000000000000",
-      "contactIdLegacy": 55001,
-      "firstName": "Ville",
-      "lastName": "Kivimäki",
-      "role": {
-        "id": "304",
-        "name": "Author"
-      }
+    "bookTypes": [],
+    "brand": {
+        "name": "WSOY"
     },
-    {
-      "contactId": "00000000-0000-0000-0000-000000000000",
-      "contactIdLegacy": 58381,
-      "firstName": "Mika",
-      "lastName": "Tuominen",
-      "role": {
-        "id": "337",
-        "name": "Designer, cover"
-      }
+    "contributors": [
+        {
+            "contactIdLegacy": 47961,
+            "contactId": "00000000-0000-0000-0000-000000000000",
+            "firstName": "Anssi",
+            "lastName": "Mäkinen",
+            "role": {
+                "name": "Project Manager",
+                "id": "326"
+            }
+        },
+        {
+            "contactIdLegacy": 55001,
+            "contactId": "00000000-0000-0000-0000-000000000000",
+            "firstName": "Ville",
+            "lastName": "Kivimäki",
+            "role": {
+                "name": "Author",
+                "id": "304"
+            }
+        },
+        {
+            "contactIdLegacy": 58381,
+            "contactId": "00000000-0000-0000-0000-000000000000",
+            "firstName": "Mika",
+            "lastName": "Tuominen",
+            "role": {
+                "name": "Designer, cover",
+                "id": "337"
+            }
+        },
+        {
+            "contactIdLegacy": 59668,
+            "contactId": "00000000-0000-0000-0000-000000000000",
+            "firstName": "Paula",
+            "lastName": "Sarkkinen",
+            "role": {
+                "name": "Production Planner",
+                "id": "325"
+            }
+        },
+        {
+            "contactIdLegacy": 59694,
+            "contactId": "00000000-0000-0000-0000-000000000000",
+            "firstName": "Bookwell Oy",
+            "role": {
+                "name": "Printer",
+                "id": "336"
+            }
+        }
+    ],
+    "costCenter": {
+        "name": "WSOY - Tietokirjat",
+        "code": "313",
+        "isActive": true
     },
-    {
-      "contactId": "00000000-0000-0000-0000-000000000000",
-      "contactIdLegacy": 59668,
-      "firstName": "Paula",
-      "lastName": "Sarkkinen",
-      "role": {
-        "id": "325",
-        "name": "Production Planner"
-      }
+    "coverImageAssetId": "310723",
+    "created": "2021-02-04T16:06:09+00:00",
+    "customsNumber": "49019900",
+    "discountNumber": {
+        "name": "0",
+        "erpId": "0"
     },
-    {
-      "contactId": "00000000-0000-0000-0000-000000000000",
-      "contactIdLegacy": 59694,
-      "firstName": "Bookwell Oy",
-      "role": {
-        "id": "336",
-        "name": "Printer"
-      }
-    }
-  ],
-  "costCenter": {
-    "code": "313",
+    "dispositionCode": {
+        "name": "d",
+        "erpId": "d"
+    },
+    "ean": "9789510374665",
+    "editionIdLegacy": 244940,
+    "governingCode": {
+        "name": "Sold out",
+        "erpId": "4"
+    },
+    "hasFscPaper": false,
     "isActive": true,
-    "name": "WSOY - Tietokirjat"
-  },
-  "coverImageAssetId": "310723",
-  "created": "2021-02-04T16:06:09+00:00",
-  "customsNumber": "49019900",
-  "discountNumber": {
-    "erpId": "0",
-    "name": "0"
-  },
-  "dispositionCode": {
-    "erpId": "d",
-    "name": "d"
-  },
-  "ean": "9789510374665",
-  "editionIdLegacy": 244940,
-  "governingCode": {
-    "erpId": "4",
-    "name": "Sold out"
-  },
-  "hasFscPaper": false,
-  "isActive": true,
-  "isDigital": false,
-  "isIllustrated": false,
-  "isPrintOnDemand": false,
-  "isPublic": true,
-  "keywords": [
-    "traumat",
-    "ENNAKKOTIETO",
-    "sotahistoria",
-    "mielenterveys",
-    "sotilaat",
-    "jatkosota",
-    "talvisota",
-    "sodat",
-    "kokemukset",
-    "mielenterveyshäiriöt",
-    "traumaperäinen stressireaktio",
-    "psykiatrinen hoito",
-    "sotilaspsykiatria",
-    "psykiatria",
-    "psykohistoria",
-    "Lapin sota",
-    "sodankäynti",
-    "Suomi",
-    "1939-1945",
-    "2013",
-    "sotarintama",
-    "kirjallisuuspalkinnot"
-  ],
-  "languages": [
-    {
-      "code": "fin",
-      "name": "Finnish"
-    }
-  ],
-  "mainGroup": {
-    "erpId": "7",
-    "name": "Tietokirjallisuus"
-  },
-  "measurements": {
-    "depth": 37.0000,
-    "height": 218.0000,
-    "weight": 0.6150,
-    "width": 140.0000
-  },
-  "modified": "2026-08-31T10:40:51.2349179+00:00",
-  "nominations": [],
-  "originalLanguages": [],
-  "pages": 475,
-  "places": [],
-  "prices": [
-    {
-      "price": {
-        "currency": "EUR",
-        "value": 41.3200
-      },
-      "priceType": "PublisherRetailPrice"
+    "isDigital": false,
+    "isIllustrated": false,
+    "isPrintOnDemand": false,
+    "isPublic": true,
+    "keywords": [
+        "traumat",
+        "ENNAKKOTIETO",
+        "sotahistoria",
+        "mielenterveys",
+        "sotilaat",
+        "jatkosota",
+        "talvisota",
+        "sodat",
+        "kokemukset",
+        "mielenterveyshäiriöt",
+        "traumaperäinen stressireaktio",
+        "psykiatrinen hoito",
+        "sotilaspsykiatria",
+        "psykiatria",
+        "psykohistoria",
+        "Lapin sota",
+        "sodankäynti",
+        "Suomi",
+        "1939-1945",
+        "2013",
+        "sotarintama",
+        "kirjallisuuspalkinnot"
+    ],
+    "languages": [
+        {
+            "name": "Finnish",
+            "code": "fin"
+        }
+    ],
+    "mainGroup": {
+        "name": "Tietokirjallisuus",
+        "erpId": "7"
     },
-    {
-      "price": {
-        "currency": "EUR",
-        "value": 46.9000
-      },
-      "priceType": "PublisherRetailPriceIncludingVat"
+    "measurements": {
+        "width": 140.0000,
+        "height": 218.0000,
+        "depth": 37.0000,
+        "weight": 0.6150
     },
-    {
-      "price": {
-        "currency": "EUR",
-        "value": 33.6400
-      },
-      "priceType": "ResellerPrice"
+    "modified": "2026-10-28T08:16:02.5661088+00:00",
+    "nominations": [],
+    "originalLanguages": [],
+    "pages": 475,
+    "places": [],
+    "prices": [
+        {
+            "priceType": "PublisherRetailPrice",
+            "price": {
+                "value": 41.3200,
+                "currency": "EUR"
+            }
+        },
+        {
+            "priceType": "PublisherRetailPriceIncludingVat",
+            "price": {
+                "value": 46.9000,
+                "currency": "EUR"
+            }
+        },
+        {
+            "priceType": "ResellerPrice",
+            "price": {
+                "value": 33.6400,
+                "currency": "EUR"
+            }
+        },
+        {
+            "priceType": "ResellerPriceIncludingVat",
+            "price": {
+                "value": 38.1800,
+                "currency": "EUR"
+            }
+        }
+    ],
+    "productGroup": {
+        "name": "P1",
+        "erpId": "P1"
     },
-    {
-      "price": {
-        "currency": "EUR",
-        "value": 38.1800
-      },
-      "priceType": "ResellerPriceIncludingVat"
-    }
-  ],
-  "productGroup": {
-    "erpId": "P1",
-    "name": "P1"
-  },
-  "productId": "1ca73850-96c2-4ac3-8b98-44d35c9378d1",
-  "prohibitTextAndDataMining": false,
-  "publishingDate": "2013-08-15T00:00:00",
-  "publishingHouse": {
-    "id": "wsoy",
-    "name": "WSOY"
-  },
-  "regulatoryInfo": [],
-  "salesYear": 0,
-  "season": {
-    "period": "Autumn",
-    "year": "2013"
-  },
-  "stockBalance": 0,
-  "subgroup": {
-    "erpId": "4",
-    "name": "Historia"
-  },
-  "technicalProductionTypeName": "BBF Generic",
-  "texts": [
-    {
-      "text": "<p>Aseiden vaiettua moni veteraani heräsi öisiin painajaisiinsa. Mitä he olivat saaneet kärsiä? Kuinka mielenterveys oli mahdollista säilyttää tilanteissa, joissa sietokyvyn rajat tulivat vastaan? Mitä tapahtui, kun tuo raja ylittyi?</p>",
-      "textIdLegacy": 0,
-      "textTypeId": "1"
+    "productId": "1ca73850-96c2-4ac3-8b98-44d35c9378d1",
+    "prohibitTextAndDataMining": false,
+    "publishingDate": "2013-08-15T00:00:00",
+    "publishingHouse": {
+        "id": "wsoy",
+        "name": "WSOY"
     },
-    {
-      "text": "<p>Nuoren historiantutkijasukupolvemme ehdotonta kärkeä edustava tutkija Ville Kivimäki (s. 1976) on ollut toimittamassa ja kirjoittamassa mm. aihetta sivuavia <em>Ihminen sodassa</em>, <em>Ruma sota</em> ja <em>Finland in World War II</em> -teoksia. <em>Murtuneet mielet</em> perustuu Kivimäen laajaa kiinnostusta herättäneeseen väitöskirjaan.</p>",
-      "textIdLegacy": 0,
-      "textTypeId": "8"
+    "regulatoryInfo": [],
+    "salesYear": 0,
+    "season": {
+        "period": "Autumn",
+        "year": "2013"
     },
-    {
-      "text": "<p>Sotiemme vaiheet tunnetaan jo lähes perin pohjin, mutta sodan tunnehistorian kartoitustyö on yhä kesken. Tärkeän tutkimusalueen merkkipaaluksi muodostunut <em>Murtuneet mielet</em> purkaa rohkeasti sankaruuden ylle sälytettyjä myyttejä sekä sukupolvia vaivanneita kansallisia traumoja. Ville Kivimäen kartoittaa teoksessa rintamamiesten psyykkisen kestämisen ja murtumisen syitä ja vaihtelua toisen maailmansodan eri vaiheissa. Keitä aikalaistermein \"tärähtäneet\" sotilaat olivat? Miksi heihin suhtauduttiin niin toisin kuin muihin sodassa haavoittuneisiin? Henkisesti murtuneiden sotilaiden hoitomuodot – työterapiasta sähköshokkeihin – sekä sodan aikana vallalla olleet sotapsykiatriset opit tulevat myös käsitellyiksi.</p>",
-      "textIdLegacy": 0,
-      "textTypeId": "2"
+    "stockBalance": 0,
+    "subgroup": {
+        "name": "Historia",
+        "erpId": "4"
     },
-    {
-      "text": "<p>Tieto-Finlandian voittanut teos purkaa rohkeasti sankaruuden ylle sälytettyjä myyttejä sekä sukupolvia vaivanneita kansallisia traumoja.</p>",
-      "textIdLegacy": 0,
-      "textTypeId": "19"
-    },
-    {
-      "text": "",
-      "textIdLegacy": 0,
-      "textTypeId": "30"
-    },
-    {
-      "text": "",
-      "textIdLegacy": 0,
-      "textTypeId": "31"
-    }
-  ],
-  "themas": [
-    {
-      "description": "Suomi",
-      "parent": {
-        "description": "Pohjois-Eurooppa, Skandinavia",
-        "parent": {
-          "description": "Eurooppa",
-          "parent": {
-            "description": "Lisämääreet: Paikka",
-            "sortOrder": 0,
+    "subtitle": "Taistelu suomalaissotilaiden hermoista 1939-1945",
+    "technicalProductionTypeName": "BBF Generic",
+    "texts": [
+        {
+            "textIdLegacy": 0,
+            "text": "<p>Aseiden vaiettua moni veteraani heräsi öisiin painajaisiinsa. Mitä he olivat saaneet kärsiä? Kuinka mielenterveys oli mahdollista säilyttää tilanteissa, joissa sietokyvyn rajat tulivat vastaan? Mitä tapahtui, kun tuo raja ylittyi?</p>",
+            "textTypeId": "1"
+        },
+        {
+            "textIdLegacy": 0,
+            "text": "<p>Nuoren historiantutkijasukupolvemme ehdotonta kärkeä edustava tutkija Ville Kivimäki (s. 1976) on ollut toimittamassa ja kirjoittamassa mm. aihetta sivuavia <em>Ihminen sodassa</em>, <em>Ruma sota</em> ja <em>Finland in World War II</em> -teoksia. <em>Murtuneet mielet</em> perustuu Kivimäen laajaa kiinnostusta herättäneeseen väitöskirjaan.</p>",
+            "textTypeId": "8"
+        },
+        {
+            "textIdLegacy": 0,
+            "text": "<p>Sotiemme vaiheet tunnetaan jo lähes perin pohjin, mutta sodan tunnehistorian kartoitustyö on yhä kesken. Tärkeän tutkimusalueen merkkipaaluksi muodostunut <em>Murtuneet mielet</em> purkaa rohkeasti sankaruuden ylle sälytettyjä myyttejä sekä sukupolvia vaivanneita kansallisia traumoja. Ville Kivimäen kartoittaa teoksessa rintamamiesten psyykkisen kestämisen ja murtumisen syitä ja vaihtelua toisen maailmansodan eri vaiheissa. Keitä aikalaistermein \"tärähtäneet\" sotilaat olivat? Miksi heihin suhtauduttiin niin toisin kuin muihin sodassa haavoittuneisiin? Henkisesti murtuneiden sotilaiden hoitomuodot – työterapiasta sähköshokkeihin – sekä sodan aikana vallalla olleet sotapsykiatriset opit tulevat myös käsitellyiksi.</p>",
+            "textTypeId": "2"
+        },
+        {
+            "textIdLegacy": 0,
+            "text": "<p>Tieto-Finlandian voittanut teos purkaa rohkeasti sankaruuden ylle sälytettyjä myyttejä sekä sukupolvia vaivanneita kansallisia traumoja.</p>",
+            "textTypeId": "19"
+        },
+        {
+            "textIdLegacy": 0,
+            "text": "",
+            "textTypeId": "30"
+        },
+        {
+            "textIdLegacy": 0,
+            "text": "",
+            "textTypeId": "31"
+        }
+    ],
+    "themas": [
+        {
+            "themaCodeValue": "1DNF",
             "themaCodeType": {
-              "id": "2",
-              "isPrimary": false,
-              "name": "Place qualifier",
-              "onixCode": "94"
+                "id": "2",
+                "name": "Place qualifier",
+                "onixCode": "94",
+                "isPrimary": false
             },
-            "themaCodeValue": "1"
-          },
-          "sortOrder": 0,
-          "themaCodeType": {
-            "id": "2",
-            "isPrimary": false,
-            "name": "Place qualifier",
-            "onixCode": "94"
-          },
-          "themaCodeValue": "1D"
-        },
-        "sortOrder": 0,
-        "themaCodeType": {
-          "id": "2",
-          "isPrimary": false,
-          "name": "Place qualifier",
-          "onixCode": "94"
-        },
-        "themaCodeValue": "1DN"
-      },
-      "sortOrder": 0,
-      "themaCodeType": {
-        "id": "2",
-        "isPrimary": false,
-        "name": "Place qualifier",
-        "onixCode": "94"
-      },
-      "themaCodeValue": "1DNF"
-    },
-    {
-      "description": "Toisen maailmansodan aika (n. 1939–1945)",
-      "parent": {
-        "description": "n. 1940–1949",
-        "parent": {
-          "description": "1900-luvun alkupuolisko, n. 1900–1950",
-          "parent": {
-            "description": "1900-luku, n. 1900–1999",
+            "sortOrder": 0,
             "parent": {
-              "description": "n. 1500-luvulta nykyaikaan",
-              "parent": {
-                "description": "Lisämääreet: Aika",
-                "sortOrder": 0,
+                "themaCodeValue": "1DN",
                 "themaCodeType": {
-                  "id": "4",
-                  "isPrimary": false,
-                  "name": "Time period qualifier",
-                  "onixCode": "96"
+                    "id": "2",
+                    "name": "Place qualifier",
+                    "onixCode": "94",
+                    "isPrimary": false
                 },
-                "themaCodeValue": "3"
-              },
-              "sortOrder": 0,
-              "themaCodeType": {
+                "sortOrder": 0,
+                "parent": {
+                    "themaCodeValue": "1D",
+                    "themaCodeType": {
+                        "id": "2",
+                        "name": "Place qualifier",
+                        "onixCode": "94",
+                        "isPrimary": false
+                    },
+                    "sortOrder": 0,
+                    "parent": {
+                        "themaCodeValue": "1",
+                        "themaCodeType": {
+                            "id": "2",
+                            "name": "Place qualifier",
+                            "onixCode": "94",
+                            "isPrimary": false
+                        },
+                        "sortOrder": 0,
+                        "description": "Lisämääreet: Paikka"
+                    },
+                    "description": "Eurooppa"
+                },
+                "description": "Pohjois-Eurooppa, Skandinavia"
+            },
+            "description": "Suomi"
+        },
+        {
+            "themaCodeValue": "3MPBLB",
+            "themaCodeType": {
                 "id": "4",
-                "isPrimary": false,
                 "name": "Time period qualifier",
-                "onixCode": "96"
-              },
-              "themaCodeValue": "3M"
+                "onixCode": "96",
+                "isPrimary": false
             },
             "sortOrder": 0,
-            "themaCodeType": {
-              "id": "4",
-              "isPrimary": false,
-              "name": "Time period qualifier",
-              "onixCode": "96"
+            "parent": {
+                "themaCodeValue": "3MPBL",
+                "themaCodeType": {
+                    "id": "4",
+                    "name": "Time period qualifier",
+                    "onixCode": "96",
+                    "isPrimary": false
+                },
+                "sortOrder": 0,
+                "parent": {
+                    "themaCodeValue": "3MPB",
+                    "themaCodeType": {
+                        "id": "4",
+                        "name": "Time period qualifier",
+                        "onixCode": "96",
+                        "isPrimary": false
+                    },
+                    "sortOrder": 0,
+                    "parent": {
+                        "themaCodeValue": "3MP",
+                        "themaCodeType": {
+                            "id": "4",
+                            "name": "Time period qualifier",
+                            "onixCode": "96",
+                            "isPrimary": false
+                        },
+                        "sortOrder": 0,
+                        "parent": {
+                            "themaCodeValue": "3M",
+                            "themaCodeType": {
+                                "id": "4",
+                                "name": "Time period qualifier",
+                                "onixCode": "96",
+                                "isPrimary": false
+                            },
+                            "sortOrder": 0,
+                            "parent": {
+                                "themaCodeValue": "3",
+                                "themaCodeType": {
+                                    "id": "4",
+                                    "name": "Time period qualifier",
+                                    "onixCode": "96",
+                                    "isPrimary": false
+                                },
+                                "sortOrder": 0,
+                                "description": "Lisämääreet: Aika"
+                            },
+                            "description": "n. 1500-luvulta nykyaikaan"
+                        },
+                        "description": "1900-luku, n. 1900–1999"
+                    },
+                    "description": "1900-luvun alkupuolisko, n. 1900–1950"
+                },
+                "description": "n. 1940–1949"
             },
-            "themaCodeValue": "3MP"
-          },
-          "sortOrder": 0,
-          "themaCodeType": {
-            "id": "4",
-            "isPrimary": false,
-            "name": "Time period qualifier",
-            "onixCode": "96"
-          },
-          "themaCodeValue": "3MPB"
+            "description": "Toisen maailmansodan aika (n. 1939–1945)"
         },
-        "sortOrder": 0,
-        "themaCodeType": {
-          "id": "4",
-          "isPrimary": false,
-          "name": "Time period qualifier",
-          "onixCode": "96"
-        },
-        "themaCodeValue": "3MPBL"
-      },
-      "sortOrder": 0,
-      "themaCodeType": {
-        "id": "4",
-        "isPrimary": false,
-        "name": "Time period qualifier",
-        "onixCode": "96"
-      },
-      "themaCodeValue": "3MPBLB"
-    },
-    {
-      "description": "Sotahistoria",
-      "parent": {
-        "description": "Historia",
-        "parent": {
-          "description": "Historia ja arkeologia",
-          "sortOrder": 0,
-          "themaCodeType": {
-            "id": "1",
-            "isPrimary": true,
-            "name": "Primary",
-            "onixCode": "93"
-          },
-          "themaCodeValue": "N"
-        },
-        "sortOrder": 0,
-        "themaCodeType": {
-          "id": "1",
-          "isPrimary": true,
-          "name": "Primary",
-          "onixCode": "93"
-        },
-        "themaCodeValue": "NH"
-      },
-      "sortOrder": 0,
-      "themaCodeType": {
-        "id": "1",
-        "isPrimary": true,
-        "name": "Primary",
-        "onixCode": "93"
-      },
-      "themaCodeValue": "NHW"
-    }
-  ],
-  "timePeriods": [],
-  "title": "Murtuneet mielet",
-  "vat": 0.1350,
-  "workIdLegacy": 244939
+        {
+            "themaCodeValue": "NHW",
+            "themaCodeType": {
+                "id": "1",
+                "name": "Primary",
+                "onixCode": "93",
+                "isPrimary": true
+            },
+            "sortOrder": 0,
+            "parent": {
+                "themaCodeValue": "NH",
+                "themaCodeType": {
+                    "id": "1",
+                    "name": "Primary",
+                    "onixCode": "93",
+                    "isPrimary": true
+                },
+                "sortOrder": 0,
+                "parent": {
+                    "themaCodeValue": "N",
+                    "themaCodeType": {
+                        "id": "1",
+                        "name": "Primary",
+                        "onixCode": "93",
+                        "isPrimary": true
+                    },
+                    "sortOrder": 0,
+                    "description": "Historia ja arkeologia"
+                },
+                "description": "Historia"
+            },
+            "description": "Sotahistoria"
+        }
+    ],
+    "timePeriods": [],
+    "title": "Murtuneet mielet",
+    "vat": 0.1350,
+    "workIdLegacy": 244939
 }

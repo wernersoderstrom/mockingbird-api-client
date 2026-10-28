@@ -1,0 +1,10 @@
+{
+    "mainEditionProductId": "1ca73850-96c2-4ac3-8b98-44d35c9378d1",
+    "mainEditionIsbn": "9789510374665",
+    "webEditionProductId": "1ca73850-96c2-4ac3-8b98-44d35c9378d1",
+    "costCenter": {
+        "name": "WSOY - Tietokirjat",
+        "code": "313",
+        "isActive": true
+    }
+}
