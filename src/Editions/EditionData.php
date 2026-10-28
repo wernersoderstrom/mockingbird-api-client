@@ -15,6 +15,7 @@ use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 use Wernersoderstrom\MockingbirdApiClient\Casts\NonEmptyTextsCast;
+use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
 use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 
 class EditionData extends Data
@@ -188,7 +189,7 @@ class EditionData extends Data
         ];
 
         if (array_key_exists($this->bindingCode->name, $bindingCodeMapping) === false) {
-            throw new Exception('Could not map binding code for internal title. Binding code: '.$this->bindingCode->name);
+            throw new UnsupportedBindingCode('Could not map binding code for internal title. Binding code: '.$this->bindingCode->name);
         }
 
         $format = $bindingCodeMapping[$this->bindingCode->name];
@@ -230,8 +231,7 @@ class EditionData extends Data
             try {
                 return (new ISO3166)->name($address['country'])['alpha2'];
             } catch (OutOfBoundsException) {
-                throw new Exception('Cannot find ISO-3166 code for country named '.$address['country']
-                );
+                throw new Exception('Cannot find ISO-3166 code for country named '.$address['country']);
             }
         }
 
