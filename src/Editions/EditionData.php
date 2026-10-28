@@ -189,7 +189,8 @@ class EditionData extends Data
         ];
 
         if (array_key_exists($this->bindingCode->name, $bindingCodeMapping) === false) {
-            throw UnsupportedBindingCode::forInternalTitle($this->bindingCode->name);}
+            throw UnsupportedBindingCode::forInternalTitle($this->bindingCode->name);
+        }
 
         $format = $bindingCodeMapping[$this->bindingCode->name];
 

@@ -3,7 +3,6 @@
 namespace Wernersoderstrom\MockingbirdApiClient\Tests;
 
 use Dotenv\Dotenv;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClientServiceProvider;
