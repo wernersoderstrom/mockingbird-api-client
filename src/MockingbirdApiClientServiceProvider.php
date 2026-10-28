@@ -2,9 +2,9 @@
 
 namespace Wernersoderstrom\MockingbirdApiClient;
 
-use Wernersoderstrom\MockingbirdApiClient\Editions\EditionService;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Wernersoderstrom\MockingbirdApiClient\Editions\EditionService;
 
 class MockingbirdApiClientServiceProvider extends PackageServiceProvider
 {

@@ -5,8 +5,6 @@ namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Str;
-use Wernersoderstrom\MockingbirdApiClient\Casts\NonEmptyTextsCast;
-use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 use League\ISO3166\ISO3166;
 use OutOfBoundsException;
 use Spatie\LaravelData\Attributes\Computed;
@@ -16,6 +14,8 @@ use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
+use Wernersoderstrom\MockingbirdApiClient\Casts\NonEmptyTextsCast;
+use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 
 class EditionData extends Data
 {
