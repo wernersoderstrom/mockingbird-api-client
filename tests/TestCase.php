@@ -35,7 +35,5 @@ class TestCase extends Orchestra
         $app['config']->set('mockingbird-api-client.scope', env('MOCKINGBIRD_SCOPE'));
     }
 
-    public function getEnvironmentSetUp($app)
-    {
-    }
+    public function getEnvironmentSetUp($app) {}
 }
