@@ -15,14 +15,14 @@ class MockingbirdApiClient
     {
         $response = Http::asForm()
             ->post(
-                config('mockingbird-api-client.oauth_url'),
+                config()->string('mockingbird-api-client.oauth_url'),
                 [
                     'grant_type' => 'password',
-                    'client_id' => config('mockingbird-api-client.client_id'),
-                    'client_secret' => config('mockingbird-api-client.client_secret'),
-                    'username' => config('mockingbird-api-client.username'),
-                    'password' => config('mockingbird-api-client.password'),
-                    'scope' => config('mockingbird-api-client.scope'),
+                    'client_id' => config()->string('mockingbird-api-client.client_id'),
+                    'client_secret' => config()->string('mockingbird-api-client.client_secret'),
+                    'username' => config()->string('mockingbird-api-client.username'),
+                    'password' => config()->string('mockingbird-api-client.password'),
+                    'scope' => config()->string('mockingbird-api-client.scope'),
                 ]
             )
             ->throw()
@@ -44,10 +44,10 @@ class MockingbirdApiClient
     protected function cacheKey(): string
     {
         return 'mockingbird-api-client.access-token.'.md5(implode('|', [
-            config('mockingbird-api-client.oauth_url'),
-            config('mockingbird-api-client.client_id'),
-            config('mockingbird-api-client.username'),
-            config('mockingbird-api-client.scope'),
+            config()->string('mockingbird-api-client.oauth_url'),
+            config()->string('mockingbird-api-client.client_id'),
+            config()->string('mockingbird-api-client.username'),
+            config()->string('mockingbird-api-client.scope'),
         ]));
     }
 
@@ -55,7 +55,7 @@ class MockingbirdApiClient
     {
         $tokenRefreshed = false;
 
-        return Http::baseUrl(config('mockingbird-api-client.base_url'))
+        return Http::baseUrl(config()->string('mockingbird-api-client.base_url'))
             ->acceptJson()
             ->withToken($this->accessToken())
             ->timeout(5)
