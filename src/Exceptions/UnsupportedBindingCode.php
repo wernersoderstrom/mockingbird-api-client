@@ -15,4 +15,9 @@ class UnsupportedBindingCode extends RuntimeException
             )
         );
     }
+
+    public static function forInternalTitle(string $name): self
+    {
+        return new self(sprintf('Could not map binding code "%s" to an internal title format.', $name));
+    }
 }

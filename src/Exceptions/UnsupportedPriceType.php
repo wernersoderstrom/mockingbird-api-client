@@ -6,7 +6,7 @@ use RuntimeException;
 
 class UnsupportedPriceType extends RuntimeException
 {
-    public static function forCode(string $priceType): self
+    public static function forType(string $priceType): self
     {
         return new self(
             sprintf(
