@@ -37,6 +37,7 @@ class EditionData extends Data
      * @param  DataCollection<int, LanguageData>  $languages
      * @param  DataCollection<int, LanguageData>  $originalLanguages
      * @param  DataCollection<int, PriceData>  $prices
+     * @param  float  $vatRate  VAT as a fraction, e.g. 0.135 for 13.5 %
      * @param  DataCollection<int, TextData>  $texts
      */
     public function __construct(
@@ -127,7 +128,7 @@ class EditionData extends Data
         public ?string $technicalProductionTypeName,
 
         #[MapInputName('vat')]
-        public float $vatPercentage,
+        public float $vatRate,
 
         #[WithCast(NonEmptyTextsCast::class)]
         #[DataCollectionOf(TextData::class)]

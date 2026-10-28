@@ -85,7 +85,7 @@ it('can fetch edition data correctly', function () {
     expect($edition->stockBalance)->toBe(0);
     expect($edition->technicalProductionTypeName)->toBe('BBF Generic');
 
-    expect($edition->vatPercentage)->toBeFloat()->toBe(0.1350);
+    expect($edition->vatRate)->toBeFloat()->toBe(0.1350);
 
     expect($edition->texts)->toBeInstanceOf(DataCollection::class)
         ->and($edition->texts)->toHaveCount(4)
