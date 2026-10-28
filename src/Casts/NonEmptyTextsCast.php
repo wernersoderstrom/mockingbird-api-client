@@ -3,6 +3,7 @@
 namespace Wernersoderstrom\MockingbirdApiClient\Casts;
 
 use Spatie\LaravelData\Casts\Cast;
+use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 use Spatie\LaravelData\Support\Creation\CreationContext;
 use Spatie\LaravelData\Support\DataProperty;
@@ -10,6 +11,11 @@ use Wernersoderstrom\MockingbirdApiClient\Editions\TextData;
 
 final class NonEmptyTextsCast implements Cast
 {
+    /**
+     * @param  array<string, mixed>  $properties
+     * @param  CreationContext<Data>  $context
+     * @return DataCollection<int, TextData>
+     */
     public function cast(
         DataProperty $property,
         mixed $value,

@@ -29,6 +29,16 @@ class EditionData extends Data
     #[Computed]
     public ?string $imprint;
 
+    /**
+     * @param  DataCollection<int, ContributorData>  $contributors
+     * @param  DataCollection<int, AwardData>  $awards
+     * @param  array<int, string>  $keywords
+     * @param  array<int, string>  $bookTypes
+     * @param  DataCollection<int, LanguageData>  $languages
+     * @param  DataCollection<int, LanguageData>  $originalLanguages
+     * @param  DataCollection<int, PriceData>  $prices
+     * @param  DataCollection<int, TextData>  $texts
+     */
     public function __construct(
         #[MapInputName('productId')]
         public string $id,

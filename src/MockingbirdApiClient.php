@@ -88,6 +88,10 @@ class MockingbirdApiClient
         return $exception instanceof RequestException && $exception->response->status() === 401;
     }
 
+    /**
+     * @param  array<string, mixed>  $query
+     * @return array<mixed>
+     */
     public function get(string $path, array $query = []): array
     {
         return $this->request()
@@ -96,6 +100,10 @@ class MockingbirdApiClient
             ->json() ?? [];
     }
 
+    /**
+     * @param  array<mixed>  $payload
+     * @return array<mixed>|null
+     */
     public function put(string $path, array $payload): ?array
     {
         return $this->request()

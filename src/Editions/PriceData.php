@@ -15,6 +15,9 @@ class PriceData extends Data
         public ?string $onixCodelistValue,
     ) {}
 
+    /**
+     * @param  array<string, mixed>  $data
+     */
     public static function fromApi(array $data): self
     {
         return new self(
