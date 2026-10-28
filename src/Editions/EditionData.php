@@ -3,7 +3,6 @@
 namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
 use Carbon\Carbon;
-use Exception;
 use Illuminate\Support\Str;
 use League\ISO3166\ISO3166;
 use OutOfBoundsException;
@@ -16,6 +15,7 @@ use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 use Wernersoderstrom\MockingbirdApiClient\Casts\NonEmptyTextsCast;
 use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
+use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedCountry;
 use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 
 class EditionData extends Data
@@ -231,7 +231,7 @@ class EditionData extends Data
             try {
                 return (new ISO3166)->name($address['country'])['alpha2'];
             } catch (OutOfBoundsException) {
-                throw new Exception('Cannot find ISO-3166 code for country named '.$address['country']);
+                throw UnsupportedCountry::forName($address['country']);
             }
         }
 
