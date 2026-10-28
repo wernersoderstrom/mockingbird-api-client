@@ -252,20 +252,21 @@ class EditionData extends Data
         if ($resellerPrice === 0.0) {
             $value = 0.0;
         } else {
-            $value = $resellerPrice * $this->retailPriceMultiplier();
+            // Integer arithmetic in units of 1/100000 EUR to avoid float rounding errors
+            $units = (int) round($resellerPrice * 100) * (int) round($this->retailPriceMultiplier() * 1000);
 
             // Rounding for pocket books, manga and digital products is up to nearest 10 cents
             if ($this->costCenter?->id === 965 || $this->bindingCode->name === 'Pocket book' || $this->isDigital) {
-                $value = ceil($value * 10) / 10;
+                $value = intdiv($units + 9999, 10000) / 10;
             } else {
                 // All others to nearest 90 cents
-                $fraction = $value - floor($value);
+                $euros = intdiv($units, 100000);
 
-                if ($fraction > 0.9) {
-                    $value++;
+                if ($units % 100000 > 90000) {
+                    $euros++;
                 }
 
-                $value = floor($value) + 0.9;
+                $value = $euros + 0.9;
             }
         }
 
