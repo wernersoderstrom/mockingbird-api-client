@@ -10,12 +10,4 @@ class StockBalanceData extends Data
         public int $gtin,
         public int $balance,
     ) {}
-
-    public function toApiArray(): array
-    {
-        return [
-            'ean' => $this->gtin,
-            'balance' => $this->balance,
-        ];
-    }
 }
