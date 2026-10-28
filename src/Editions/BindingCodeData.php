@@ -42,9 +42,7 @@ class BindingCodeData extends Data
                 'MARK' => 'ZZ',
                 'MISC' => 'ZZ',
                 'MULTI' => 'SA',
-                default => throw new UnsupportedBindingCode(
-                    "Onix codelistmapping for binding code {$data['id']} does not exist"
-                ),
+                default => throw UnsupportedBindingCode::forCode($data['id']),
             },
         );
     }
