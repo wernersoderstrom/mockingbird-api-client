@@ -145,6 +145,13 @@ it('can generate internal title correctly', function (string $editionId, string 
     expect($edition->internalTitle)->toBe($expectedInternalTitle);
 })->with('internal titles')->group('integration');
 
+it('can generate internal title for ebooks with audio correctly', function (string $editionId, string $expectedInternalTitle) {
+    $edition = app(EditionService::class)->get($editionId);
+    expect($edition->internalTitle)->toBe($expectedInternalTitle);
+})->with('internal titles for ebooks with audio')
+    ->group('integration')
+    ->skip('Waiting for ebookHasAudioFile in the Mockingbird API response');
+
 it('can update stock balances correctly', function () {
     $service = app(EditionService::class);
 

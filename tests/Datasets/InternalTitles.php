@@ -77,6 +77,10 @@ dataset('internal titles', [
         '7a57d817-1544-4518-ac1c-aee238e0b53f',
         'Avaruus - Koululaisen kirja ja palapel moniosainen',
     ],
+]);
+
+// Waiting for ebookHasAudioFile to be added to the API response
+dataset('internal titles for ebooks with audio', [
     [
         '30ecfcf4-c7d3-4dbe-841f-400f9fde1225',
         'Kettulan kahvila: Pelli-pupun syntymäpäiv eä-kirja',
