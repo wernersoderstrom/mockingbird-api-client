@@ -68,7 +68,8 @@
                 "Wernersoderstrom\\MockingbirdApiClient\\MockingbirdApiClientServiceProvider"
             ],
             "aliases": {
-                "MockingbirdApiClient": "Wernersoderstrom\\MockingbirdApiClient\\Facades\\MockingbirdApiClient"
+                "MockingbirdApiClient": "Wernersoderstrom\\MockingbirdApiClient\\Facades\\MockingbirdApiClient",
+                "MockingbirdEdition": "Wernersoderstrom\\MockingbirdApiClient\\Facades\\Edition"
             }
         }
     },
