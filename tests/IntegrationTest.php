@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
 use Spatie\LaravelData\DataCollection;
 use Wernersoderstrom\MockingbirdApiClient\Editions\AwardData;
 use Wernersoderstrom\MockingbirdApiClient\Editions\ContributorData;
@@ -153,22 +155,22 @@ it('can generate internal title for ebooks with audio correctly', function (stri
     ->skip('Waiting for ebookHasAudioFile in the Mockingbird API response');
 
 it('can update stock balances correctly', function () {
-    $service = app(EditionService::class);
+    Http::fake([
+        '*/v1/Edition/stock' => Http::response(),
+    ]);
 
-    try {
-        $service->updateStockBalances([
-            new StockBalanceData(gtin: 9789510368633, balance: 5),
-            new StockBalanceData(gtin: 9789524161558, balance: 7),
-        ]);
+    app(EditionService::class)->updateStockBalances([
+        new StockBalanceData(gtin: 9789510368633, balance: 5),
+        new StockBalanceData(gtin: 9789524161558, balance: 7),
+    ]);
 
-        expect($service->get('f100c517-9a10-49a7-b9a5-21a0e8cbed75')->stockBalance)->toBe(5);
-        expect($service->get('fe5c41a5-782c-437b-8577-71f61d0392f4')->stockBalance)->toBe(7);
-    } finally {
-        $service->updateStockBalances([
-            new StockBalanceData(gtin: 9789510368633, balance: 0),
-            new StockBalanceData(gtin: 9789524161558, balance: 0),
-        ]);
-    }
+    Http::assertSent(fn (Request $request) => $request->method() === 'PUT'
+        && str_ends_with($request->url(), 'v1/Edition/stock')
+        && $request->data() === [
+            ['ean' => '9789510368633', 'balance' => 5],
+            ['ean' => '9789524161558', 'balance' => 7],
+        ]
+    );
 })->group('integration');
 
 it('can fetch edition with gtin correctly', function () {
