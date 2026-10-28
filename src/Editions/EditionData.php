@@ -4,10 +4,9 @@ namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use League\ISO3166\ISO3166;
-use OutOfBoundsException;
 use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
+use Spatie\LaravelData\Attributes\Hidden;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
@@ -15,14 +14,9 @@ use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 use Wernersoderstrom\MockingbirdApiClient\Casts\NonEmptyTextsCast;
 use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedBindingCode;
-use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedCountry;
-use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 
 class EditionData extends Data
 {
-    /** @var array<string, mixed> */
-    private array $work = [];
-
     #[Computed]
     public bool $isMainEdition;
 
@@ -135,6 +129,9 @@ class EditionData extends Data
         #[MapInputName('dispositionCode.name')]
         public string $dispositionCode,
 
+        #[Hidden]
+        public WorkData $work,
+
         /** TODO
          *
          * assets
@@ -144,9 +141,8 @@ class EditionData extends Data
         $this->isTranslated = $this->resolveIsTranslated();
         $this->pages = $this->pages === 0 ? null : $this->pages;
 
-        $this->work = app(MockingbirdApiClient::class)->get('v1/Work/'.$this->legacyWorkId);
-        $this->isMainEdition = $this->id === $this->work['mainEditionProductId'];
-        $this->isWebEdition = $this->id === $this->work['webEditionProductId'];
+        $this->isMainEdition = $this->id === $this->work->mainEditionProductId;
+        $this->isWebEdition = $this->id === $this->work->webEditionProductId;
 
         // Map 0.0 value in measurements to null
         $this->depth = $this->depth === 0.0 ? null : $this->depth;
@@ -205,37 +201,17 @@ class EditionData extends Data
         return trim(mb_substr($this->title, 0, 50 - $spaceForFormat)).' '.$format;
     }
 
-    public function countryOfManufacture(): ?string
+    public function printer(): ?ContributorData
     {
         if ($this->isDigital) {
             return null;
         }
 
-        $printer = $this->contributors
+        return $this->contributors
             ->toCollection()
             ->where('role.name', 'Printer')
-            ->reject(fn (ContributorData $contributor) => Str::contains($contributor->firstName, 'Yhteispainatus') || Str::contains($contributor->lastName ?? '', 'Yhteispainatus'))
+            ->reject(fn (ContributorData $contributor) => Str::contains($contributor->fullName, 'Yhteispainatus'))
             ->first();
-
-        if ($printer === null) {
-            return null;
-        }
-
-        $contact = app(MockingbirdApiClient::class)->get('v1/Contact/'.$printer->contactIdLegacy);
-
-        foreach ($contact['addresses'] as $address) {
-            if (empty($address['country'])) {
-                continue;
-            }
-
-            try {
-                return (new ISO3166)->name($address['country'])['alpha2'];
-            } catch (OutOfBoundsException) {
-                throw UnsupportedCountry::forName($address['country']);
-            }
-        }
-
-        return null;
     }
 
     public function calculatedPublisherRetailPrice(): ?PriceData
@@ -306,19 +282,12 @@ class EditionData extends Data
 
     public function mainEditionCostCenter(): ?CostCenterData
     {
-        if (isset($this->work['costCenter']['code']) === false) {
-            return null;
-        }
-
-        return new CostCenterData(
-            id: $this->work['costCenter']['code'],
-            name: $this->work['costCenter']['name'],
-        );
+        return $this->work->costCenter;
     }
 
-    public function mainEditionGtin(): int
+    public function mainEditionGtin(): ?int
     {
-        return $this->work['mainEditionIsbn'];
+        return $this->work->mainEditionGtin;
     }
 
     public function resolveIsTranslated(): bool

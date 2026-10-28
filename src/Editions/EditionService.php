@@ -2,6 +2,9 @@
 
 namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
+use League\ISO3166\ISO3166;
+use OutOfBoundsException;
+use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedCountry;
 use Wernersoderstrom\MockingbirdApiClient\MockingbirdApiClient;
 
 class EditionService
@@ -12,20 +15,41 @@ class EditionService
 
     public function get(string $id): EditionData
     {
-        $response = $this->client->get(
-            "/v1/Edition/{$id}"
+        return $this->fromResponse(
+            $this->client->get("v1/Edition/{$id}")
         );
-
-        return EditionData::from($response);
     }
 
     public function getByGtin(string|int $gtin): EditionData
     {
-        return EditionData::from(
-            $this->client->get(
-                "v1/EditionByIsbn/{$gtin}"
-            )
+        return $this->fromResponse(
+            $this->client->get("v1/EditionByIsbn/{$gtin}")
         );
+    }
+
+    public function countryOfManufacture(EditionData $edition): ?string
+    {
+        $printer = $edition->printer();
+
+        if ($printer === null) {
+            return null;
+        }
+
+        $contact = $this->client->get('v1/Contact/'.$printer->contactIdLegacy);
+
+        foreach ($contact['addresses'] as $address) {
+            if (empty($address['country'])) {
+                continue;
+            }
+
+            try {
+                return (new ISO3166)->name($address['country'])['alpha2'];
+            } catch (OutOfBoundsException) {
+                throw UnsupportedCountry::forName($address['country']);
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -45,5 +69,16 @@ class EditionService
             'v1/Edition/stock',
             $payload
         );
+    }
+
+    /**
+     * @param  array<string, mixed>  $edition
+     */
+    protected function fromResponse(array $edition): EditionData
+    {
+        return EditionData::from([
+            ...$edition,
+            'work' => $this->client->get('v1/Work/'.$edition['workIdLegacy']),
+        ]);
     }
 }
