@@ -2,6 +2,7 @@
 
 namespace Wernersoderstrom\MockingbirdApiClient\Editions;
 
+use Illuminate\Support\Arr;
 use League\ISO3166\ISO3166;
 use OutOfBoundsException;
 use Wernersoderstrom\MockingbirdApiClient\Exceptions\UnsupportedCountry;
@@ -35,9 +36,10 @@ class EditionService
             return null;
         }
 
+        /** @var array{addresses?: list<array{country?: string|null}>|null} $contact */
         $contact = $this->client->get('v1/Contact/'.$printer->contactIdLegacy);
 
-        foreach ($contact['addresses'] as $address) {
+        foreach ($contact['addresses'] ?? [] as $address) {
             if (empty($address['country'])) {
                 continue;
             }
@@ -57,6 +59,7 @@ class EditionService
      */
     public function updateStockBalances(array $stockBalances): void
     {
+        /** @var list<array{ean: string, balance: int}> $payload */
         $payload = collect($stockBalances)
             ->map(fn (StockBalanceData $stockBalance) => [
                 'ean' => strval($stockBalance->gtin),
@@ -78,7 +81,7 @@ class EditionService
     {
         return EditionData::from([
             ...$edition,
-            'work' => $this->client->get('v1/Work/'.$edition['workIdLegacy']),
+            'work' => $this->client->get('v1/Work/'.Arr::integer($edition, 'workIdLegacy')),
         ]);
     }
 }

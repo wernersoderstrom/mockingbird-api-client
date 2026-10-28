@@ -14,7 +14,7 @@ class BindingCodeData extends Data
     ) {}
 
     /**
-     * @param  array<string, mixed>  $data
+     * @param  array{id: string, name: string}  $data
      */
     public static function fromApi(array $data): self
     {

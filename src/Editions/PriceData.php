@@ -16,7 +16,7 @@ class PriceData extends Data
     ) {}
 
     /**
-     * @param  array<string, mixed>  $data
+     * @param  array{price: array{currency: string, value: float|int}, priceType: string}  $data
      */
     public static function fromApi(array $data): self
     {

@@ -13,12 +13,12 @@ class ContributorRoleData extends Data
     ) {}
 
     /**
-     * @param  array<string, mixed>  $data
+     * @param  array{id: int|string, name: string}  $data
      */
     public static function fromApi(array $data): self
     {
         return new self(
-            id: $data['id'],
+            id: (int) $data['id'],
             name: $data['name'],
             onixCodelistValue: match ($data['name']) {
                 'Adapted by' => 'B05',

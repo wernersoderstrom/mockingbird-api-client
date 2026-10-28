@@ -25,7 +25,8 @@ final class NonEmptyTextsCast implements Cast
         $texts = collect(is_array($value) ? $value : [])
             ->filter(
                 fn (mixed $item): bool => is_array($item)
-                    && filled(trim((string) ($item['text'] ?? '')))
+                    && is_string($item['text'] ?? null)
+                    && filled(trim($item['text']))
             )
             ->map(
                 fn (array $item): TextData => TextData::from($item)

@@ -13,6 +13,7 @@ class MockingbirdApiClient
 {
     protected function authenticate(): string
     {
+        /** @var array{access_token: string, expires_in?: int} $response */
         $response = Http::asForm()
             ->post(
                 config()->string('mockingbird-api-client.oauth_url'),
@@ -38,7 +39,9 @@ class MockingbirdApiClient
 
     protected function accessToken(): string
     {
-        return Cache::get($this->cacheKey()) ?? $this->authenticate();
+        $token = Cache::get($this->cacheKey());
+
+        return is_string($token) ? $token : $this->authenticate();
     }
 
     protected function cacheKey(): string
@@ -61,7 +64,7 @@ class MockingbirdApiClient
             ->timeout(5)
             ->retry(
                 3,
-                fn (int $attempt, Throwable $exception) => $this->isUnauthorized($exception) ? 0 : 2000,
+                fn (int $attempt, mixed $exception) => $this->isUnauthorized($exception) ? 0 : 2000,
                 function (Throwable $exception, PendingRequest $request) use (&$tokenRefreshed): bool {
                     // Token expired or revoked: fetch a new one and retry once
                     if ($this->isUnauthorized($exception)) {
@@ -83,32 +86,38 @@ class MockingbirdApiClient
             );
     }
 
-    protected function isUnauthorized(Throwable $exception): bool
+    protected function isUnauthorized(mixed $exception): bool
     {
         return $exception instanceof RequestException && $exception->response->status() === 401;
     }
 
     /**
      * @param  array<string, mixed>  $query
-     * @return array<mixed>
+     * @return array<string, mixed>
      */
     public function get(string $path, array $query = []): array
     {
-        return $this->request()
+        /** @var array<string, mixed>|null $response */
+        $response = $this->request()
             ->get($path, $query)
             ->throw()
-            ->json() ?? [];
+            ->json();
+
+        return $response ?? [];
     }
 
     /**
-     * @param  array<mixed>  $payload
+     * @param  array<string, mixed>|list<mixed>  $payload
      * @return array<mixed>|null
      */
     public function put(string $path, array $payload): ?array
     {
-        return $this->request()
+        /** @var array<mixed>|null $response */
+        $response = $this->request()
             ->put($path, $payload)
             ->throw()
             ->json();
+
+        return $response;
     }
 }
